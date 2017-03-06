@@ -4,19 +4,16 @@
     </head>
     <body>
         <div>
-            <h1><a href="">Django Girls Blog</a></h1>
+            <h1><a href="/">This is my Django Blog</a></h1>
+            
         </div>
 
+        {% for post in posts %}
         <div>
-            <p>published: 2.03.2017, 00:30</p>
-            <h2><a href="">My first post</a></h2>
-            <p>This is my first post in this Django girls blog.</p>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
-        <div>
-            <p>published: 2.03.2017, 01:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>I have an assignment to do but i am wasting time here.</p>
-        </div>
+        {% endfor %}
     </body>
 </html>
